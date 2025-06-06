@@ -1,0 +1,64 @@
+Próximos passos sugeridos
+Integrar custos logísticos para medir lucro líquido por produto.
+
+Adicionar dados de marketing (campanhas, investimentos) para análises de atribuição.
+
+Acompanhar métricas de rotatividade de estoque (days-on-hand) para reduzir capital empatado.
+
+Sinta-se à vontade para pedir refinamentos ou análises adicionais (ex.: previsão de demanda, clusters de produto, etc.).
+
+-----------------------------------
+
+Recomendações de melhoria
+Gestão de estoque inteligente
+
+Garantir nível de serviço de Bathing Soap (maior giro) e ToothPaste (2º maior).
+
+Implementar política de “safety stock” diferenciada para meses 7-9 e 11-12, quando a curva sobe.
+
+Campanhas direcionadas em meses fracos
+
+Criar promoções específicas em fevereiro e junho (ex.: “2 por 1”, cupons) para aumentar tráfego.
+
+Alvo: elevar unidades em ~15 % nesses meses, o que deve refletir lucro adicional proporcional.
+
+Pacotes (bundles) para itens de menor saída
+
+Oferecer FaceWash + FaceCream como kit com desconto pequeno.
+
+Objetivo: converter clientes do item-estrela para cross-sell sem erosão de margem significativa.
+
+Ajuste de pricing dinâmico
+
+Testar aumento de preço controlado (1-2 %) em períodos de pico, medindo elasticidade.
+
+Manter monitoramento para não impactar volume — a linha reta Unidades × Lucro sugere espaço para teste.
+
+Dashboard operacional contínuo
+
+Transformar estes gráficos em painel de acompanhamento mensal (por exemplo, via Power BI/Looker).
+
+Alarmes automáticos quando volume ou margem caírem > 1 desvio-padrão abaixo da média.
+
+
+--------------------------------------------
+
+| Tema                          | O que o dado mostra?                                                                 | Por que importa?                                                                                                                        |
+| ----------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Produto-estrela**           | *Bathing Soap* responde por **≈ 52 %** de todas as unidades vendidas no ano.         | É o principal motor de volume – garantir estoque e margens nessa linha é crítico.                                                       |
+| **Lucro acompanha volume**    | A relação Unidades × Lucro é praticamente linear (R² ≈ 1 no gráfico de dispersão).   | Cada unidade gera \~10 unid-monetárias de lucro; estratégias que elevem volume tendem a elevar lucro quase na mesma proporção.          |
+| **Sazonalidade**              | Picos em Ago (Mês 8) e Nov (Mês 11); quedas acentuadas em Fev (Mês 2) e Jun (Mês 6). | Oportunidade de campanhas para suavizar a demanda nos meses fracos e maximizar o pico pré-festivo.                                      |
+| **Produtos de baixo giro**    | *FaceWash* e *Moisturizer* somados representam < 15 % das vendas.                    | Podem estar canibalizando espaço/marketing sem retorno proporcional; avaliar reformulação ou bundles.                                   |
+| **Lucro por unidade estável** | *Profit per Unit* manteve-se fixo em \~10 ao longo do ano.                           | Sinal de pricing consistente, mas também de falta de otimização fina: não há evidência de upsell ou segmentação de preço por temporada. |
+
+
+-----------------------------------------------------------
+
+
+Visão geral do conjunto de dados
+Utilizamos o company_sales_data.csv, um exemplo clássico de 12 meses de vendas de uma loja de produtos de higiene e cosméticos – colunas para cada categoria, total de unidades e lucro total. 
+gist.github.com
+
+Os gráficos e tabelas interativas acima permitem explorar os números; abaixo estão os principais achados.
+
+

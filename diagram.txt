@@ -1,0 +1,34 @@
+| Tabela / Entidade | Atributos (PK / FK \*)                                                                             | Observação                        |
+| ----------------- | -------------------------------------------------------------------------------------------------- | --------------------------------- |
+| **DimProduct**    | **ProductID** *(PK)*, ProductName, Category                                                        | Dimensão de produto               |
+| **DimDate**       | **DateID** *(PK)*, Month, Year                                                                     | Dimensão de tempo                 |
+| **FactSales**     | **ProductID** *(FK → DimProduct.ProductID)*, **DateID** *(FK → DimDate.DateID)*, UnitsSold, Profit | Tabela fato (grão: produto × mês) |
+
+
+------------------------
+
+
+ Código Mermaid ER (pode colar em ferramentas como Mermaid Live Editor, draw.io, Obsidian etc.)
+
+ erDiagram
+    DimProduct {
+        int ProductID PK
+        string ProductName
+        string Category
+    }
+
+    DimDate {
+        int DateID PK
+        int Month
+        int Year
+    }
+
+    FactSales {
+        int ProductID FK
+        int DateID  FK
+        int UnitsSold
+        decimal Profit
+    }
+
+    DimProduct ||--o{ FactSales : "1 --<"
+    DimDate    ||--o{ FactSales : "1 --<"
